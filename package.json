@@ -1,0 +1,12 @@
+{
+  "name": "mern-app",
+  "private": true,
+  "scripts": {
+    "client": "cd frontend && npm start",
+    "server": "cd backend && npm start",
+    "start": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.0.0"
+  }
+}

@@ -1,0 +1,171 @@
+.landing-page {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  background-color: #104a1d;
+  flex-direction: column;
+  margin-bottom: 0;
+  padding-top: 50px;
+  overflow: hidden;
+}
+
+.hero-section {
+  text-align: center;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  /* justify-content: center; */
+  /* align-items: center; */
+  padding: 100px;
+}
+
+.hero-content{
+  margin-top: 5%;
+}
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+}
+
+.hero-button {
+  background-color: transparent;
+  color: white;
+  border: 3px solid white;
+  padding: 12px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 25px;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+}
+
+.hero-button:hover {
+  translate: 0 4px;
+  scale: 1.1;
+  box-shadow: 0 0 5px 7px white;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-content p {
+    font-size: 1.1rem;
+  }
+
+  .hero-button {
+    padding: 10px;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .hero-section {
+    flex-direction: column;
+    padding: 60px;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .hero-button {
+    padding: 10px;
+    font-size: 1rem;
+  }
+
+  .hero-image {
+    width: 60%; /* Scale the image for smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .landing-page {
+    padding: 8%;
+  }
+
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-content p {
+    font-size: 0.9rem;
+  }
+
+  .hero-button {
+    padding: 8px;
+    font-size: 0.9rem;
+  }
+
+  .hero-image {
+    width: 70%;
+  }
+}
+
+@media (max-width: 576px) {
+  .landing-page {
+    padding: 5%;
+  }
+
+  .hero-section{
+    padding-top: 0;
+    margin-top: 0;
+  }
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-content p {
+    font-size: 0.8rem;
+  }
+
+  .hero-button {
+    padding: 6px;
+    font-size: 0.8rem;
+  }
+
+  .hero-image {
+    width: 80%;
+  }
+}
+
+@media (max-width: 400px) {
+  .landing-page {
+    padding: 2%;
+    padding-top: 0;
+    margin-top: 0;
+  }
+
+  .hero-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero-content p {
+    font-size: 0.9rem;
+  }
+
+  .hero-button {
+    padding: 5px;
+    font-size: 0.7rem;
+  }
+
+  .hero-image {
+    width: 85%;
+  }
+}

@@ -1,0 +1,64 @@
+.product-card {
+    border: none;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-details-card {
+    border: 3px solid #104a1d;
+    border-radius: 15px;
+    background-color: #d1f1d96a;
+}
+
+.product-image {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.carousel-control-next, .carousel-control-prev{
+    background-color: #104a1d;
+    opacity: 0.9;
+    height: 40px;
+    width: 40px;
+    margin: auto;
+    color: white;
+    border-radius: 24px;
+    padding: 2px;
+
+    .span{
+        font-weight: bolder;
+    }
+}
+.carousel-indicators{
+    opacity: 1;
+}
+.product-image:hover {
+    transform: scale(1.05);
+}
+
+.price-text {
+    color: #28a745;
+    font-size: 1.25rem;
+}
+
+.badge {
+    background-color: #28a745;
+}
+
+.my-review {
+    background-color: #f8f9fa;
+}
+
+img.img-fluid {
+    width: 100%;
+    height: auto;
+}
+
+.bttn {
+    border-color: #104a1d;
+}
+
+.reviews {
+    background-color: #d1f1d96a;
+}
