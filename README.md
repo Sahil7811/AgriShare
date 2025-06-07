@@ -1,7 +1,6 @@
-# Demo Url  : https://drive.google.com/file/d/1YMqV5eqyHRIix46zU-EV--unzglEBPKc/view
-# AgriCircle - Agriculture Management System
+# AgriShare - Agriculture Management System
 
-AgriCircle is a modern Agriculture Management System that enables farmers to rent equipment, browse products, access weather forecasts, and receive crop care advice. The system supports multi-language accessibility and secure payment options.
+AgriShare is a modern Agriculture Management System that enables farmers to rent equipment, browse products, access weather forecasts, and receive crop care advice. The system supports multi-language accessibility and secure payment options.
 
 ---
 
