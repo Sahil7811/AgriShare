@@ -208,7 +208,6 @@ const Dashboard = () => {
     windSpeed: `${day.wind_speed} m/s`,
     pressure: `${day.pressure} hPa`,
     clouds: `${day.clouds}%`,
-    icon: <img src={`http://openweathermap.org/img/wn/${day.icon}.png`} alt="weather icon" />
   }));
 
   return (
@@ -254,7 +253,6 @@ const Dashboard = () => {
                               <p><strong>Pressure:</strong> {currentWeather.main.pressure} hPa</p>
                               <p><strong>Clouds:</strong> {currentWeather.clouds.all}%</p>
                             </section>
-                            <img src={`http://openweathermap.org/img/wn/${currentWeather.weather[0].icon}.png`} alt="weather icon" />
                           </Card.Text>
                         </Card.Body>
                       </Card>
