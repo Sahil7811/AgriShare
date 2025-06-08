@@ -45,7 +45,7 @@ mongoose
   .then(() => console.log("Mongoose is connected"))
   .catch((err) => console.log("Error in connecting Mongoose:", err));
 
-// Start the server
+// Start the server 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
