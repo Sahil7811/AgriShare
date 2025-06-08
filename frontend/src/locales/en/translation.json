@@ -67,10 +67,10 @@
     "location": "Location"
   },
   "landing": {
-    "title": "Revolutionize Your Farming",
-    "description": "Advanced management tools for modern farmers. Optimize your crops and streamline operations with ease.",
-    "browseProducts": "Browse Products",
-    "getStarted": "Get Started!"
+    "title": "Transform the Future of Farming",
+    "description": "Empower your farm with cutting-edge tools designed for today's growers. Maximize yields, reduce waste, and simplify every aspect of your operation.",
+    "browseProducts": "Explore Our Tools",
+    "getStarted": "Start Growing Smarter"
   },
   "error": {
     "userNotAuthenticated": "User not authenticated.",

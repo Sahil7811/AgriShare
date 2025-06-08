@@ -37,7 +37,6 @@ const LandingPage = () => {
             {isAuthenticated ? t('landing.browseProducts') : t('landing.getStarted')}
           </button>
         </div>
-        <img src={Plant} alt="Farming" className="hero-image" />
       </section>
 
       {/* The following section is commented out as per your request */}
