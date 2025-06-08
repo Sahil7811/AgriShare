@@ -12,7 +12,7 @@ const LandingPage = () => {
   const navigate = useNavigate();
 
   const handleGetStartedClick = () => {
-    if (isAuthenticated || true) {
+    if (isAuthenticated) {
       navigate('/browse'); // Redirect to browse if authenticated
     } else {
       navigate('/signin'); // Redirect to sign in if not authenticated
