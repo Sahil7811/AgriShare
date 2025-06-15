@@ -10,7 +10,7 @@ const apiKey = process.env.GEMINI_API_KEY;
 const genAI = new GoogleGenerativeAI(apiKey);
 
 const model = genAI.getGenerativeModel({
-  model: "gemini-1.5-flash",
+  model: "gemini-2.0-flash",
 });
 
 const generationConfig = {
@@ -30,20 +30,26 @@ function formatResponseText(response) {
   const stages = cleanedText.split(/\n(?=[1-5]\.\s)/);
 
   // For each stage, assign numbers to the subpoints (like Duration, Temperature, Yield, etc.)
-  const formattedStages = stages.map(stage => {
-    const lines = stage.split('\n');
+  const formattedStages = stages.map((stage) => {
+    const lines = stage.split("\n");
     let pointNumber = 1;
-    const numberedPoints = lines.map(line => {
-      if (line.startsWith('Duration') || line.startsWith('Temperature') || line.startsWith('Yield') || line.startsWith('Pest/Disease') || line.startsWith('Management')) {
+    const numberedPoints = lines.map((line) => {
+      if (
+        line.startsWith("Duration") ||
+        line.startsWith("Temperature") ||
+        line.startsWith("Yield") ||
+        line.startsWith("Pest/Disease") ||
+        line.startsWith("Management")
+      ) {
         return `${pointNumber++}. ${line}`;
       }
       return line;
     });
-    return numberedPoints.join('\n');
+    return numberedPoints.join("\n");
   });
 
   // Join the stages back together, separated by two blank lines
-  return formattedStages.join('\n\n\n');
+  return formattedStages.join("\n\n\n");
 }
 
 // Function to run a chat session with the Gemini API
@@ -59,8 +65,12 @@ async function runGeminiChat(cropName, growthStage) {
       {
         role: "user",
         parts: [
-          { text: "when by user you get the crop name and its stage then based on it give subsequent or future stages information only about the crop and in each future stage in one para about 3 to 4 lines of each future stage and in each stage add things or info about duration required temperature and yield or pest detection or required things to manage that particular prompt.\n" },
-          { text: "five stages I mentioned that is seed, germination, vegetative, flowering, harvest\n" },
+          {
+            text: "when by user you get the crop name and its stage then based on it give subsequent or future stages information only about the crop and in each future stage in one para about 3 to 4 lines of each future stage and in each stage add things or info about duration required temperature and yield or pest detection or required things to manage that particular prompt.\n",
+          },
+          {
+            text: "five stages I mentioned that is seed, germination, vegetative, flowering, harvest\n",
+          },
         ],
       },
     ],
@@ -78,4 +88,3 @@ async function runGeminiChat(cropName, growthStage) {
 module.exports = {
   runGeminiChat,
 };
-

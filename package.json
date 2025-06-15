@@ -2,7 +2,7 @@
   "name": "mern-app",
   "private": true,
   "scripts": {
-    "client": "cd frontend && nodemon start",
+    "client": "cd frontend && nodemon dev",
     "server": "cd backend && nodemon start",
     "start": "concurrently \"npm run server\" \"npm run client\""
   },

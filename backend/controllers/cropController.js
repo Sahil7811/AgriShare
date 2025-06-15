@@ -1,14 +1,12 @@
-const Crop = require('../models/cropModel');
-const { runGeminiChat } = require('../utils/GeminiApi');
+const Crop = require("../models/cropModel");
+const { runGeminiChat } = require("../utils/GeminiApi");
 
 exports.uploadCrop = async (req, res) => {
   try {
     const prompt = `
       Provide guidance on the following crop and stage:
       Crop Name: ${req.body.name}
-      Growth Stage: ${req.body.stage}`
-      
-     
+      Growth Stage: ${req.body.stage}`;
 
     const guidance = await runGeminiChat(req.body.name, req.body.stage, prompt);
 
@@ -17,17 +15,17 @@ exports.uploadCrop = async (req, res) => {
       stage: req.body.stage,
       image: {
         data: req.file.buffer,
-        contentType: req.file.mimetype
+        contentType: req.file.mimetype,
       },
       guidance: guidance,
-      username: req.body.username // Store username from the request body
+      username: req.body.username, // Store username from the request body
     });
 
     await newCrop.save();
 
     res.status(201).json({
-      message: 'Image, stage, and guidance uploaded successfully!',
-      crop: newCrop
+      message: "Image, stage, and guidance uploaded successfully!",
+      crop: newCrop,
     });
   } catch (err) {
     res.status(500).json({ error: err.message });
@@ -52,7 +50,7 @@ exports.getCropImage = async (req, res) => {
   try {
     const crop = await Crop.findById(req.params.id);
     if (!crop) {
-      return res.status(404).json({ message: 'Crop not found' });
+      return res.status(404).json({ message: "Crop not found" });
     }
     res.contentType(crop.image.contentType);
     res.send(crop.image.data);
@@ -66,9 +64,9 @@ exports.deleteCrop = async (req, res) => {
   try {
     const crop = await Crop.findByIdAndDelete(req.params.id);
     if (!crop) {
-      return res.status(404).json({ message: 'Crop not found' });
+      return res.status(404).json({ message: "Crop not found" });
     }
-    res.status(200).json({ message: 'Crop deleted successfully!' });
+    res.status(200).json({ message: "Crop deleted successfully!" });
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
