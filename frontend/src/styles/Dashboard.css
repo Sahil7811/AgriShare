@@ -18,42 +18,81 @@
   --shadow-soft: rgba(26, 59, 43, 0.15);
   --shadow-medium: rgba(26, 59, 43, 0.25);
   --shadow-deep: rgba(26, 59, 43, 0.4);
-  --gradient-nature: linear-gradient(135deg, var(--forest-primary) 0%, var(--sage-green) 100%);
-  --gradient-harvest: linear-gradient(135deg, var(--wheat-gold) 0%, var(--harvest-gold) 100%);
-  --gradient-earth: linear-gradient(135deg, var(--earth-brown) 0%, var(--wheat-gold) 100%);
+  --gradient-nature: linear-gradient(
+    135deg,
+    var(--forest-primary) 0%,
+    var(--sage-green) 100%
+  );
+  --gradient-harvest: linear-gradient(
+    135deg,
+    var(--wheat-gold) 0%,
+    var(--harvest-gold) 100%
+  );
+  --gradient-earth: linear-gradient(
+    135deg,
+    var(--earth-brown) 0%,
+    var(--wheat-gold) 100%
+  );
   --glass-bg: rgba(255, 255, 255, 0.12);
   --glass-border: rgba(255, 255, 255, 0.18);
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
-  background: linear-gradient(45deg, #f8fffe 0%, #f0f9f4 25%, #e8f5e8 50%, #f0f9f4 75%, #f8fffe 100%);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI",
+    Roboto, sans-serif;
+  background: linear-gradient(
+    45deg,
+    #f8fffe 0%,
+    #f0f9f4 25%,
+    #e8f5e8 50%,
+    #f0f9f4 75%,
+    #f8fffe 100%
+  );
   background-size: 400% 400%;
-  animation: gradientShift 12s ease-in-out infinite;
-  color: var(--forest-deep);
   line-height: 1.6;
   overflow-x: hidden;
 }
 
 @keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  25% { background-position: 100% 50%; }
-  50% { background-position: 100% 100%; }
-  75% { background-position: 0% 100%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 100% 50%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  75% {
+    background-position: 0% 100%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 body::before {
-  content: '';
+  content: "";
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: 
-    radial-gradient(circle at 20% 80%, rgba(107, 142, 107, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(212, 165, 116, 0.08) 0%, transparent 50%),
-    radial-gradient(circle at 40% 40%, rgba(135, 206, 235, 0.05) 0%, transparent 50%);
+  background: radial-gradient(
+      circle at 20% 80%,
+      rgba(107, 142, 107, 0.1) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(212, 165, 116, 0.08) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 40% 40%,
+      rgba(135, 206, 235, 0.05) 0%,
+      transparent 50%
+    );
   pointer-events: none;
   z-index: -1;
 }
@@ -86,13 +125,18 @@ body::before {
 }
 
 .dashboardh1::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
   transition: left 0.8s ease-in-out;
 }
 
@@ -119,7 +163,7 @@ body::before {
 }
 
 .card::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -156,243 +200,18 @@ body::before {
     rgba(139, 111, 71, 0.8) 75%,
     rgba(212, 165, 116, 0.85) 100%
   );
+  color:white;
   background-size: 400% 400%;
   animation: weatherGradientFlow 20s ease-in-out infinite;
   border-radius: 32px;
   position: relative;
   overflow: hidden;
   margin-bottom: 32px;
-  box-shadow: 
-    0 32px 96px rgba(26, 59, 43, 0.12),
-    0 8px 32px rgba(26, 59, 43, 0.08),
-    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  box-shadow: 0 32px 96px rgba(26, 59, 43, 0.12),
+    0 8px 32px rgba(26, 59, 43, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.15);
   border: 1px solid rgba(255, 255, 255, 0.08);
   transform: perspective(1000px);
   transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-}
-
-@keyframes weatherGradientFlow {
-  0%, 100% { background-position: 0% 50%; }
-  25% { background-position: 100% 25%; }
-  50% { background-position: 100% 75%; }
-  75% { background-position: 0% 100%; }
-}
-
-.weathercontainer::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: 
-    radial-gradient(ellipse at 25% 20%, rgba(245, 201, 105, 0.15) 0%, transparent 50%),
-    radial-gradient(ellipse at 75% 80%, rgba(135, 206, 235, 0.1) 0%, transparent 60%),
-    radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 0.03) 0%, transparent 70%);
-  opacity: 0.8;
-  animation: atmosphericShift 15s ease-in-out infinite;
-}
-
-@keyframes atmosphericShift {
-  0%, 100% { transform: translateX(0) scale(1); opacity: 0.8; }
-  33% { transform: translateX(20px) scale(1.02); opacity: 0.6; }
-  66% { transform: translateX(-15px) scale(0.98); opacity: 0.9; }
-}
-
-.weathercontainer::after {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: 
-    linear-gradient(45deg, 
-      rgba(245, 201, 105, 0.02) 0%,
-      transparent 25%,
-      rgba(135, 206, 235, 0.015) 50%,
-      transparent 75%,
-      rgba(245, 201, 105, 0.02) 100%
-    );
-  animation: gentleFlow 25s ease-in-out infinite;
-  pointer-events: none;
-}
-
-@keyframes gentleFlow {
-  0%, 100% { transform: translateX(0) translateY(0) scale(1); opacity: 0.6; }
-  25% { transform: translateX(10px) translateY(-5px) scale(1.01); opacity: 0.4; }
-  50% { transform: translateX(-5px) translateY(10px) scale(0.99); opacity: 0.8; }
-  75% { transform: translateX(-10px) translateY(-5px) scale(1.01); opacity: 0.5; }
-}
-
-.weathercontainer:hover {
-  transform: translateY(-8px);
-  box-shadow: 
-    0 48px 128px rgba(26, 59, 43, 0.2),
-    0 16px 64px rgba(26, 59, 43, 0.12),
-    inset 0 1px 0 rgba(255, 255, 255, 0.25);
-}
-
-.weathercontainer .card-body {
-  background: 
-    linear-gradient(135deg, 
-      rgba(255, 255, 255, 0.15) 0%,
-      rgba(255, 255, 255, 0.08) 50%,
-      rgba(255, 255, 255, 0.12) 100%
-    );
-  backdrop-filter: blur(28px) saturate(180%);
-  -webkit-backdrop-filter: blur(28px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 24px;
-  box-shadow: 
-    0 16px 48px rgba(0, 0, 0, 0.08),
-    inset 0 1px 0 rgba(255, 255, 255, 0.3),
-    inset 0 -1px 0 rgba(0, 0, 0, 0.05);
-  position: relative;
-  z-index: 10;
-  overflow: hidden;
-  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-  padding: 40px;
-}
-
-.weathercontainer .card-body::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: 
-    radial-gradient(circle at 80% 20%, rgba(245, 201, 105, 0.08) 0%, transparent 50%),
-    radial-gradient(circle at 20% 80%, rgba(135, 206, 235, 0.06) 0%, transparent 50%);
-  opacity: 0.6;
-  transition: opacity 0.6s ease;
-}
-
-.weathercontainer:hover .card-body::before {
-  opacity: 1;
-}
-
-.weathercontainer .card-body::after {
-  content: '';
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  background: linear-gradient(45deg, 
-    rgba(245, 201, 105, 0.3) 0%,
-    rgba(135, 206, 235, 0.2) 25%,
-    rgba(107, 142, 107, 0.25) 75%,
-    rgba(245, 201, 105, 0.3) 100%
-  );
-  border-radius: 24px;
-  z-index: -1;
-  opacity: 0;
-  transition: opacity 0.6s ease;
-}
-
-.weathercontainer:hover .card-body::after {
-  opacity: 1;
-}
-
-.weathercontainer h2 {
-  color: rgba(255, 255, 255, 0.95);
-  font-weight: 700;
-  font-size: 2rem;
-  letter-spacing: -0.03em;
-  margin-bottom: 24px;
-  text-shadow: 
-    0 2px 12px rgba(0, 0, 0, 0.15),
-    0 1px 3px rgba(0, 0, 0, 0.1);
-  background: linear-gradient(135deg, 
-    rgba(255, 255, 255, 1) 0%,
-    rgba(245, 201, 105, 0.9) 50%,
-    rgba(255, 255, 255, 0.8) 100%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  position: relative;
-  transition: all 0.3s ease;
-}
-
-.weathercontainer h2::after {
-  content: '';
-  position: absolute;
-  bottom: -8px;
-  left: 0;
-  width: 60px;
-  height: 3px;
-  background: linear-gradient(90deg, 
-    rgba(245, 201, 105, 0.8) 0%,
-    rgba(135, 206, 235, 0.6) 100%
-  );
-  border-radius: 2px;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-}
-
-.weathercontainer:hover h2::after {
-  transform: scaleX(1);
-}
-
-.weathercontainer .card-text {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 32px;
-  width: 100%;
-  position: relative;
-}
-
-
-
-/* Organic shape decorations */
-.weathercontainer .card-body {
-  background-image: 
-    radial-gradient(ellipse 200px 100px at 90% 10%, rgba(245, 201, 105, 0.03) 0%, transparent 50%),
-    radial-gradient(ellipse 150px 200px at 10% 90%, rgba(135, 206, 235, 0.02) 0%, transparent 50%),
-    radial-gradient(ellipse 100px 150px at 50% 20%, rgba(107, 142, 107, 0.02) 0%, transparent 50%);
-}
-
-/* Typography enhancements */
-.weathercontainer .card-text {
-  font-size: 1.1rem;
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.9);
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  line-height: 1.6;
-  letter-spacing: 0.01em;
-}
-
-/* Typography */
-.card h2 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 20px;
-  color: var(--forest-deep);
-  letter-spacing: -0.01em;
-  line-height: 1.3;
-  background: var(--gradient-nature);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* Spinner */
-.spinner-border {
-  display: block;
-  margin: 60px auto;
-  border-color: var(--sage-green);
-  border-right-color: transparent;
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
 }
 
 /* Table Styles */
@@ -462,7 +281,7 @@ canvas {
 }
 
 .nav-pills .nav-link::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: -100%;
@@ -506,9 +325,15 @@ canvas {
   animation: fadeInUp 0.6s ease-out;
 }
 
-.card:nth-child(2) { animation-delay: 0.1s; }
-.card:nth-child(3) { animation-delay: 0.2s; }
-.card:nth-child(4) { animation-delay: 0.3s; }
+.card:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.card:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.card:nth-child(4) {
+  animation-delay: 0.3s;
+}
 
 /* Responsive Design */
 @media (max-width: 1200px) {
@@ -521,56 +346,56 @@ canvas {
   .container {
     padding: 16px;
   }
-  
+
   .dashboardh1 {
     padding: 20px 24px;
     font-size: 1.5rem;
     margin-bottom: 24px;
   }
-  
+
   .card {
     margin-bottom: 20px;
   }
-  
+
   .card-body {
     padding: 20px;
   }
-  
+
   .card h2 {
     font-size: 1.25rem;
     margin-bottom: 16px;
   }
-  
+
   .weathercontainer {
     border-radius: 24px;
   }
-  
+
   .weathercontainer .card-body {
     padding: 24px;
     border-radius: 20px;
   }
-  
+
   .weathercontainer h2 {
     font-size: 1.6rem;
     margin-bottom: 20px;
   }
-  
+
   .weathercontainer .card-text {
     flex-direction: column;
     align-items: center;
     text-align: center;
     gap: 20px;
   }
-  
+
   canvas {
     max-height: 280px;
   }
-  
+
   .nav-pills .nav-link {
     padding: 12px 16px;
     font-size: 0.9rem;
   }
-  
+
   .table th,
   .table td {
     padding: 12px 16px;
@@ -582,34 +407,33 @@ canvas {
   .container {
     padding: 12px;
   }
-  
+
   .dashboardh1 {
     padding: 16px 20px;
     font-size: 1.3rem;
   }
-  
+
   .card-body {
     padding: 16px;
   }
-  
+
   .weathercontainer {
     border-radius: 20px;
   }
-  
+
   .weathercontainer .card-body {
     padding: 20px;
     border-radius: 16px;
   }
-  
+
   .weathercontainer h2 {
     font-size: 1.4rem;
   }
-  
-  
+
   .nav-pills {
     flex-direction: column;
   }
-  
+
   .nav-pills .nav-link {
     width: 100%;
     text-align: center;

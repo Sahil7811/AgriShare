@@ -86,7 +86,7 @@ const ProductDetail = () => {
     }
   }, [id, t]);
 
-  use(() => {
+  useEffect(() => {
     fetchProduct();
   }, [fetchProduct]);
 

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import '../styles/Home.css'; // Ensure corresponding styles exist in CSS
 
 function Home() {
   const navigate = useNavigate();

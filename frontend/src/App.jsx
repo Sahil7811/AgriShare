@@ -2,6 +2,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "./contexts/AuthContext"; // Import AuthProvider
+import Home from "./pages/Home";
 import Sidebar from "./components/Sidebar";
 import LandingPage from "./pages/LandingPage";
 import About from "./pages/About";
@@ -41,6 +42,7 @@ const AppContent = () => {
       <div className="content">
         <Routes>
           <Route path="/" element={<LandingPage />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/browse" element={<ProductBrowse />} />
           <Route path="/about" element={<About />} />
           {/* Protected Routes */}

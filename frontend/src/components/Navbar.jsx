@@ -36,7 +36,7 @@ const Navbar = () => {
         <FaTimes className="close" onClick={toggleMenu} />
         <Nav className="justify-content-center">
           <Nav.Item>
-            <Nav.Link href="/">{t("navbar.home")}</Nav.Link>
+            <Nav.Link href="/home">{t("navbar.home")}</Nav.Link>
           </Nav.Item>
           <Nav.Item>
             <Nav.Link href="/about">{t("navbar.about")}</Nav.Link>

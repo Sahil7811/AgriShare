@@ -16,7 +16,7 @@
 }
 
 .navbar-logo {
-  height: 70px; /* Adjust as needed */
+  height: 65px; /* Adjust as needed */
   width: 300px;
   margin-bottom: 7px;
   object-fit: contain;
@@ -72,10 +72,8 @@
 
 .navbar .nav-link {
   font-size: 1.2rem;
+  margin-bottom: 0.8rem;
   color: #0c9054;
-  margin-top: 0.4rem;
-  padding: 0.1rem 1rem;
-  border-radius: 8px;
   transition: var(--transition-speed);
   font-weight: 700;
 }
