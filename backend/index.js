@@ -24,7 +24,9 @@ app.use("/api", productRouter);
 app.use("/api/payment", paymentRoutes);
 app.use("/api/rented-products", rentedProductsRoute);
 app.use("/api/crops", cropRoutes);
-
+app.get("/", (req, res) => {
+  res.json({ hello: "test123" });
+});
 mongoose
   .connect(process.env.MONGO_URI)
   .then(() => console.log("Mongoose is connected"))
