@@ -14,13 +14,17 @@ const paymentRoutes = require("./routes/paymentRoutes");
 const cropRoutes = require("./routes/cropRoutes");
 
 // Enable CORS for requests from frontend (React app)
+
 app.use(
   cors({
-    origin: `${process.env.FRONTEND_BASE_URL}`, // Ensure this matches your frontend port
+    origin: (origin, callback) => {
+      callback(null, true); // Allow all origins
+    },
     methods: ["GET", "POST", "PATCH", "PUT", "DELETE"],
     credentials: true,
   })
 );
+
 
 // Middleware to parse incoming JSON requests
 app.use(express.json());
@@ -33,10 +37,11 @@ app.use("/api/crops", cropRoutes);
 
 mongoose
   .connect(process.env.MONGO_URL)
-  .then(() => console.log("Mongoose is connected"))
+  .then(() => console.log("Mongoose is connected")) 
   .catch((err) => console.log("Error in connecting Mongoose:", err));
 
 // Start the server
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
+  
