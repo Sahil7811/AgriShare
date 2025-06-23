@@ -26,7 +26,7 @@ app.use("/api/rented-products", rentedProductsRoute);
 app.use("/api/crops", cropRoutes);
 
 mongoose
-  .connect(process.env.MONGO_URL)
+  .connect(process.env.MONGO_URI)
   .then(() => console.log("Mongoose is connected"))
   .catch((err) => console.log("Error in connecting Mongoose:", err));
 
