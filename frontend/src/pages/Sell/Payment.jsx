@@ -55,7 +55,7 @@ const Payment = ({ currentUser, onPaymentSuccess, amount, product }) => {
       setError(null);
 
       const options = {
-        key: "rzp_test_KonVHsowvSBONt", // Replace with your Razorpay key
+        key: "1234567890", // Replace with your Razorpay key
         amount: amount * 100, // Convert amount to the smallest currency unit
         currency: "INR",
         name: "Product Purchase",
