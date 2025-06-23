@@ -1,2 +1,45 @@
+# Node modules
 node_modules/
+
+# Environment variables
 .env
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Editor/IDE files
+.vscode/
+.idea/
+*.swp
+
+# Build files
+dist/
+build/
+coverage/
+
+# PM2 process files
+pids/
+*.pid
+*.seed
+
+# Debug files
+*.local
+
+# Optional: Ignore MongoDB dump files if used
+dump/
+
+# Optional: Ignore uploads or temp storage folders
+uploads/
+tmp/
+temp/
+
+# Optional: Docker-related
+docker-compose.override.yml

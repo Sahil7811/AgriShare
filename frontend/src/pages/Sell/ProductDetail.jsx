@@ -50,7 +50,7 @@ const ProductDetail = () => {
       }
 
       const response = await axios.get(
-        `http://localhost:3000/api/products/${id}`,
+        `${import.meta.env.VITE_BACKEND_BASE_URL}/api/products/${id}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -103,7 +103,7 @@ const ProductDetail = () => {
       const userInfo = JSON.parse(localStorage.getItem("userInfo"));
 
       const response = await axios.post(
-        `http://localhost:3000/api/products/${id}/reviews`,
+        `${import.meta.env.VITE_BACKEND_BASE_URL}/api/products/${id}/reviews`,
         {
           rating,
           comment: reviewText,
@@ -183,7 +183,7 @@ const ProductDetail = () => {
     try {
       // Update product availability to false
       await axios.patch(
-        `http://localhost:3000/api/products/${product._id}`,
+        `${import.meta.env.VITE_BACKEND_BASE_URL}/api/products/${product._id}`,
         { available: false },
         {
           headers: {
