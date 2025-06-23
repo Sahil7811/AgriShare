@@ -55,7 +55,7 @@ const Payment = ({ currentUser, onPaymentSuccess, amount, product }) => {
       setError(null);
 
       const options = {
-        key: import.meta.env.VITE_RAZORPAY_KEY_ID, // Replace with your Razorpay key
+        key: "rzp_test_KonVHsowvSBONt", // Replace with your Razorpay key
         amount: amount * 100, // Convert amount to the smallest currency unit
         currency: "INR",
         name: "Product Purchase",
@@ -76,7 +76,7 @@ const Payment = ({ currentUser, onPaymentSuccess, amount, product }) => {
           name: currentUser?.name || "User Name",
           email: currentUser?.email || "user@example.com",
           contact: currentUser?.contact || "0000000000",
-        },
+        }, 
         theme: {
           color: "#3399cc",
         },

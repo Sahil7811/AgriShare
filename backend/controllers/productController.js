@@ -176,12 +176,10 @@ exports.updateProductAvailability = async (req, res) => {
     }
 
     // Return the updated product details
-    res
-      .status(200)
-      .json({
-        message: "Product availability updated successfully.",
-        product: updatedProduct,
-      });
+    res.status(200).json({
+      message: "Product availability updated successfully.",
+      product: updatedProduct,
+    });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }

@@ -1,26 +1,26 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const cropSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: true
+    required: true,
   },
   image: {
     data: Buffer,
-    contentType: String
+    contentType: String,
   },
   stage: {
     type: String,
     required: true,
-    enum: ['Seed', 'Germination', 'Vegetative', 'Flowering', 'Harvest']
+    enum: ["Seed", "Germination", "Vegetative", "Flowering", "Harvest"],
   },
   guidance: {
-    type: String  // Store guidance as a string
+    type: String, // Store guidance as a string
   },
   username: {
     type: String, // Store the username of the user who uploaded the crop
-    required: true
-  }
+    required: true,
+  },
 });
 
-module.exports = mongoose.model('Crop', cropSchema);
+module.exports = mongoose.model("Crop", cropSchema);

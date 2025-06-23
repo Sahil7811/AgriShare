@@ -3,6 +3,7 @@ const crypto = require("crypto");
 const dotenv = require("dotenv");
 dotenv.config();
 
+//razorpay instance
 const razorpay = new Razorpay({
   key_id: process.env.RAZORPAY_KEY_ID,
   key_secret: process.env.RAZORPAY_KEY_SECRET,
@@ -13,6 +14,7 @@ exports.createOrder = async (req, res) => {
   const { amount, currency } = req.body;
 
   try {
+    // create order
     const options = {
       amount: amount * 100, // Razorpay expects the amount in paise
       currency: currency,
@@ -44,6 +46,7 @@ exports.verifyPayment = (req, res) => {
     .digest("hex");
 
   if (expectedSignature === razorpay_signature) {
+    // db operations
     return res
       .status(200)
       .json({ success: true, message: "Payment verified successfully" });

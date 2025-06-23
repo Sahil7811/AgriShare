@@ -66,7 +66,7 @@ async function runGeminiChat(cropName, growthStage) {
         role: "user",
         parts: [
           {
-            text: "when by user you get the crop name and its stage then based on it give subsequent or future stages information only about the crop and in each future stage in one para about 3 to 4 lines of each future stage and in each stage add things or info about duration required temperature and yield or pest detection or required things to manage that particular prompt.\n",
+            text: "when by user you get the crop name and its stage then based on it give subsequent or future stages information only about the crop and in each future stage in one para about 3 to 4 lines of each future stage and in each stage add things or info in about duration required temperature and yield or pest detection or required things to manage that particular prompt.\n",
           },
           {
             text: "five stages I mentioned that is seed, germination, vegetative, flowering, harvest\n",

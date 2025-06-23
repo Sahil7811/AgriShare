@@ -27,7 +27,7 @@ exports.uploadCrop = async (req, res) => {
       message: "Image, stage, and guidance uploaded successfully!",
       crop: newCrop,
     });
-  } catch (err) { 
+  } catch (err) {
     res.status(500).json({ error: err.message });
   }
 };
