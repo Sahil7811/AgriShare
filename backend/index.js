@@ -6,7 +6,7 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3000; // Use port 3000 if specified in .env
 
-// Load routers
+// Load routers 
 const userRouter = require("./routes/user.route");
 const rentedProductsRoute = require("./routes/rentedProducts");
 const productRouter = require("./routes/product.route");
@@ -16,7 +16,7 @@ const cropRoutes = require("./routes/cropRoutes");
 // Enable CORS for requests from frontend (React app)
 app.use(
   cors({
-    origin: `http://localhost:5173`, // Ensure this matches your frontend port
+    origin: `${process.env.FRONTEND_BASE_URL}`, // Ensure this matches your frontend port
     methods: ["GET", "POST", "PATCH", "PUT", "DELETE"],
     credentials: true,
   })
